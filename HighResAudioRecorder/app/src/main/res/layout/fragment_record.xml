@@ -9,6 +9,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fragment Record"
@@ -17,5 +18,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/Button_Red"
+        android:src="@drawable/ic_baseline_fiber_manual_record_24"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:tint="@color/white"
+        tools:src="@drawable/ic_baseline_fiber_manual_record_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
