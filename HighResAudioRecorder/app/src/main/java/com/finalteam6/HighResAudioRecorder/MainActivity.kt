@@ -9,14 +9,20 @@ class MainActivity : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?)
     {
+        //Register ourselves as the singleton
+        Globals.MainActivitySingleton = this;
+
+        //Hide action bar
         super.onCreate(savedInstanceState)
         supportActionBar!!.hide();
         setContentView(R.layout.activity_main)
 
+        //Grab references to our fragments
         val recordFrag = fragment_record()
         val settingsFrag = fragment_settings()
         val recordingsFrag = fragment_showrecordings()
 
+        //Fragment switching
         changeFragment(recordFrag)
         findViewById<BottomNavigationView>(R.id.bottomNavigationView).setOnItemSelectedListener {
                 item ->
@@ -40,12 +46,12 @@ class MainActivity : AppCompatActivity()
         }
 
     }
-    private fun changeFragment(fragment : Fragment){
+
+    private fun changeFragment(fragment : Fragment)
+    {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragmentContainerView,fragment)
             commit()
         }
-
-        //
     }
 }
