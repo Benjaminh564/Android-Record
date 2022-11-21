@@ -76,6 +76,7 @@ class fragment_record : Fragment() {
         {
             attemptToStopRecording();
             warnAboutPermissions();
+            return;
         }
 
         //Verify storage capabilities
@@ -95,12 +96,12 @@ class fragment_record : Fragment() {
         {
             attemptToStopRecording();
             warnAboutRecordingFail();
+            return;
         }
 
         //Attempt to set settings and record
         try
         {
-            HRARMediaRecorder = null;
             HRARMediaRecorder = android.media.MediaRecorder();
             HRARMediaRecorder!!.setOutputFile(recordingFile!!.absolutePath);
             HRARMediaRecorder!!.setAudioSource(Globals.DesiredAudioSource);
@@ -116,6 +117,7 @@ class fragment_record : Fragment() {
         {
             attemptToStopRecording();
             warnAboutRecordingFail();
+            return;
         }
 
         //By this point, we are successfully recording
@@ -125,12 +127,13 @@ class fragment_record : Fragment() {
 
     private fun attemptToStopRecording()
     {
+        //Use separate try catch blocks because we want to make sure it actually stops
         var didHaveError = false;
-        //Use seperate try catch blocks because we want to make sure it actually stops
         try{HRARMediaRecorder!!.stop();}catch(e:Exception){didHaveError=true;}
         try{HRARMediaRecorder!!.reset();}catch(e:Exception){didHaveError=true;}
         try{HRARMediaRecorder!!.release();}catch(e:Exception){didHaveError=true;}
-        HRARMediaRecorder = null;
+        try{HRARMediaRecorder = null;}catch(e:Exception){didHaveError=true;}
+
         if(!didHaveError)
         {
             Toast.makeText(Globals.MA!!.applicationContext,"Saved file as $currentFilename",Toast.LENGTH_LONG).show();
