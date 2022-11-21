@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         //Register ourselves as the singleton
-        Globals.MainActivitySingleton = this;
+        Globals.MA = this;
 
         //Hide action bar
         super.onCreate(savedInstanceState)

@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.158" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/drawable/ic_baseline_fiber_manual_record_24.xml" value="0.158" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.158" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/drawable/ic_baseline_stop_24.xml" value="0.158" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/drawable/ic_launcher_background.xml" value="0.158" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/drawable/ic_showrecordings.xml" value="0.158" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/drawable/ic_showrecords.xml" value="0.158" />
         <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/fragment_record.xml" value="0.358695652173913" />
         <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
