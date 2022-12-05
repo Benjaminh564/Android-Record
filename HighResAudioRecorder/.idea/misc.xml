@@ -26,6 +26,9 @@
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_showrecordings.xml" value="0.17663817663817663" />
         <entry key="app/src/main/res/layout/item_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/login.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/loginaccess.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/signup.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>

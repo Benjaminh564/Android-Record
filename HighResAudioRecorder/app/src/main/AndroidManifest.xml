@@ -19,6 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HighResAudioRecorder"
         tools:targetApi="31">
+        <activity android:name=".loginaccess"
+            android:exported="false"/>
+        <activity android:name=".recorder"
+            android:exported="false"/>
+        <activity android:name=".signup"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

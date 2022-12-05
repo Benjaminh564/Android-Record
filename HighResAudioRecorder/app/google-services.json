@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "857027249272",
+    "project_id": "finalproject-8aa5a",
+    "storage_bucket": "finalproject-8aa5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857027249272:android:3b1525ddaa523639e8198d",
+        "android_client_info": {
+          "package_name": "com.finalteam6.HighResAudioRecorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857027249272-jptht3mebll6cs157voitad0ddjkl5ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh0rvqj6KNi1fIp_IlSptHYtop_6OxBMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857027249272-jptht3mebll6cs157voitad0ddjkl5ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
