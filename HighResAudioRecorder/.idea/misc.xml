@@ -18,7 +18,7 @@
         <entry key="app/src/main/res/drawable/ic_showrecords.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29205017089843754" />
         <entry key="app/src/main/res/layout/fragment_record.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_showrecordings.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
