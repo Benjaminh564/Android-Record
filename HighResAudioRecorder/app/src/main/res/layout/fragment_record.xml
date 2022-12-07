@@ -26,6 +26,21 @@
         android:id="@+id/fragment_record_Record_Button"
         android:layout_width="124dp"
         android:layout_height="124dp"
+        android:background="#00000000"
+        android:backgroundTint="#00000000"
+        android:scaleType="fitEnd"
+        android:tint="#ED675C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:src="@drawable/ic_roundedrectangle" />
+
+    <ImageView
+        android:id="@+id/fragment_record_Record_Button_Icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:backgroundTint="@color/Button_Red"
         android:src="@drawable/ic_baseline_fiber_manual_record_24"
         app:layout_constraintBottom_toBottomOf="parent"
