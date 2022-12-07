@@ -10,6 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?) {
+        Globals.MA=this
         super.onCreate(savedInstanceState)
         //initially starts with the login page before access to recording application
         setContentView(R.layout.login)

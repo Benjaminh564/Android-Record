@@ -7,6 +7,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class recorder: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
+
         //Hide action bar
         super.onCreate(savedInstanceState)
         supportActionBar!!.hide();
