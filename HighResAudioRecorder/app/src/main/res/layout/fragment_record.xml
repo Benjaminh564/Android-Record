@@ -26,14 +26,14 @@
         android:id="@+id/fragment_record_Record_Button"
         android:layout_width="124dp"
         android:layout_height="124dp"
-        android:background="#00000000"
         android:backgroundTint="#00000000"
-        android:scaleType="fitEnd"
-        android:tint="#ED675C"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_roundedrectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:tint="#FFED675C"
         tools:ignore="SpeakableTextPresentCheck"
         tools:src="@drawable/ic_roundedrectangle" />
 

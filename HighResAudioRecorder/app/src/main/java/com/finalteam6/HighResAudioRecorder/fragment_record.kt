@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -25,6 +26,7 @@ class fragment_record : Fragment() {
     private var currentFilepath:String = "";
 
     var fragment_record_Record_Button:ImageButton? = null;
+    var fragment_record_Record_Button_Icon:ImageView? = null;
     var fragment_record_Status:TextView? = null;
     var fragment_record_Timer:TextView? = null;
 
@@ -49,11 +51,13 @@ class fragment_record : Fragment() {
 
         //Grab UI References
         fragment_record_Record_Button = view.findViewById<ImageButton>(R.id.fragment_record_Record_Button);
+        fragment_record_Record_Button_Icon = view.findViewById<ImageView>(R.id.fragment_record_Record_Button_Icon);
         fragment_record_Status = view.findViewById<TextView>(R.id.fragment_record_Status);
-        fragment_record_Timer = view.findViewById<TextView>(R.id.fragment_record_Timer);
+        fragment_record_Timer = view.findViewById<TextView>(R.id.fragment_record_Timer)
 
         //Add button listener
         fragment_record_Record_Button!!.setOnClickListener{clicked_fragment_record_Record_Button();}
+        fragment_record_Record_Button_Icon!!.setOnClickListener{clicked_fragment_record_Record_Button();}
     }
 
     private fun clicked_fragment_record_Record_Button()
@@ -165,12 +169,12 @@ class fragment_record : Fragment() {
     private fun GUIStartRecording()
     {
         fragment_record_Status!!.text = "Recording...";
-        fragment_record_Record_Button!!.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_stop_24));
+        fragment_record_Record_Button_Icon!!.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_stop_24));
     }
 
     private  fun GUIStopRecording()
     {
         fragment_record_Status!!.text = "Tap to Start Recording";
-        fragment_record_Record_Button!!.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_fiber_manual_record_24));
+        fragment_record_Record_Button_Icon!!.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_fiber_manual_record_24));
     }
 }

@@ -13,6 +13,11 @@
         <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/fragment_record.xml" value="0.358695652173913" />
         <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/fragment_showrecordings.xml" value="0.3605072463768116" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/item_layout.xml" value="0.3605072463768116" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/login.xml" value="0.3605072463768116" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/loginaccess.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/source/repos/finalproject-finalteam6/HighResAudioRecorder/app/src/main/res/layout/signup.xml" value="0.3605072463768116" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.285" />
         <entry key="app/src/main/res/drawable/ic_baseline_fiber_manual_record_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.152" />

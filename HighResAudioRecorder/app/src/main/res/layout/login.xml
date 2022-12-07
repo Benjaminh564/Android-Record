@@ -13,22 +13,26 @@
         android:id="@+id/Signup"
         android:layout_width="165dp"
         android:layout_height="46dp"
+        android:backgroundTint="@color/Button_Red"
         android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/Login"
         android:layout_width="165dp"
         android:layout_height="46dp"
+        android:backgroundTint="@color/Button_Red"
         android:text="Log In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintVertical_bias="0.604"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/recorder"
@@ -37,7 +41,7 @@
         android:scaleX="3"
         android:scaleY="3"
         android:text="Voice Recorder"
-        android:textColor="#D51010"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
