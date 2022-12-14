@@ -19,11 +19,13 @@ import androidx.fragment.app.Fragment
 import java.io.File
 import java.util.*
 
+
 class fragment_record : Fragment() {
     private var HRARMediaRecorder:android.media.MediaRecorder? = null;
     private var isRecording:Boolean = false;
     private var currentFilename:String = "";
     private var currentFilepath:String = "";
+    private var startTime:Long = 0;
 
     var fragment_record_Record_Button:ImageButton? = null;
     var fragment_record_Record_Button_Icon:ImageView? = null;
@@ -58,6 +60,17 @@ class fragment_record : Fragment() {
         //Add button listener
         fragment_record_Record_Button!!.setOnClickListener{clicked_fragment_record_Record_Button();}
         fragment_record_Record_Button_Icon!!.setOnClickListener{clicked_fragment_record_Record_Button();}
+
+        //Setup timer thread
+        val th = Thread{
+            while (true){
+                Thread.sleep(50);
+                Globals.MA!!.runOnUiThread(Runnable{
+                    GUIUpdateTimer();
+                })
+            }
+        }
+        th.start();
     }
 
     private fun clicked_fragment_record_Record_Button()
@@ -125,6 +138,7 @@ class fragment_record : Fragment() {
         }
 
         //By this point, we are successfully recording
+        startTime = System.currentTimeMillis();
         isRecording = true;
         GUIStartRecording();
     }
@@ -144,17 +158,19 @@ class fragment_record : Fragment() {
         }
 
         //By this point we have stopped recording
-        GUIStopRecording();
+        //By this point, we are successfully recording
+        startTime = System.currentTimeMillis();
         isRecording = false;
+        GUIStopRecording();
     }
 
     private fun warnAboutPermissions()
     {
-            AlertDialog.Builder(Globals.MA!!)
-                .setTitle("Permissions")
-                .setMessage("HighResAudioRecorder needs microphone permissions in order to record audio.")
-                .setPositiveButton("OK"){_,_->}
-                .show();
+        AlertDialog.Builder(Globals.MA!!)
+            .setTitle("Permissions")
+            .setMessage("HighResAudioRecorder needs microphone permissions in order to record audio.")
+            .setPositiveButton("OK"){_,_->}
+            .show();
     }
 
     private fun warnAboutRecordingFail()
@@ -172,9 +188,48 @@ class fragment_record : Fragment() {
         fragment_record_Record_Button_Icon!!.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_stop_24));
     }
 
-    private  fun GUIStopRecording()
+    private fun GUIStopRecording()
     {
         fragment_record_Status!!.text = "Tap to Start Recording";
         fragment_record_Record_Button_Icon!!.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_fiber_manual_record_24));
+    }
+
+    private fun GUIUpdateTimer()
+    {
+        if(!isRecording)
+        {
+            fragment_record_Timer?.text = "00:00:00";
+            return;
+        }
+
+        val millisecondsInAnHour:Long =  (1000*60*60);
+        val millisecondsInAnMinute:Long =  (1000*60);
+        val millisecondsInAnSecond:Long =  (1000);
+
+        //millisecondsElapsed
+        var millisecondsElapsed:Long = System.currentTimeMillis() - startTime;
+
+        //Get Hour
+        var HoursElapsed = millisecondsElapsed / millisecondsInAnHour;
+        millisecondsElapsed -= HoursElapsed * millisecondsInAnHour;
+
+        //Get Minute
+        var MinutesElapsed = millisecondsElapsed / millisecondsInAnMinute;
+        millisecondsElapsed -= MinutesElapsed * millisecondsInAnMinute;
+
+        //Get Second
+        var SecondsElapsed = millisecondsElapsed / millisecondsInAnSecond;
+        millisecondsElapsed -= SecondsElapsed * millisecondsInAnSecond;
+
+        //Get String representations
+        var HoursElapsedString = HoursElapsed.toString();
+        var MinutesElapsedString = MinutesElapsed.toString();
+        var SecondsElapsedString = SecondsElapsed.toString();
+        while(HoursElapsedString.length < 2) {HoursElapsedString= "0$HoursElapsedString";}
+        while(MinutesElapsedString.length < 2) {MinutesElapsedString= "0$MinutesElapsedString";}
+        while(SecondsElapsedString.length < 2) {SecondsElapsedString= "0$SecondsElapsedString";}
+
+
+        fragment_record_Timer?.text = "$HoursElapsedString:$MinutesElapsedString:$SecondsElapsedString";
     }
 }
