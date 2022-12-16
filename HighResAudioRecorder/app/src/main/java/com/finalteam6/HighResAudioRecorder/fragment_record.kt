@@ -5,7 +5,9 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Debug
 import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +18,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import java.io.Console
 import java.io.File
 import java.util.*
 
@@ -201,35 +204,42 @@ class fragment_record : Fragment() {
             fragment_record_Timer?.text = "00:00:00";
             return;
         }
+        else
+        {
+            var millisecondsElapsed:Long = System.currentTimeMillis() - startTime;
+            fragment_record_Timer?.text = timerRepresentation(millisecondsElapsed);
+        }
+    }
 
-        val millisecondsInAnHour:Long =  (1000*60*60);
-        val millisecondsInAnMinute:Long =  (1000*60);
-        val millisecondsInAnSecond:Long =  (1000);
+    companion object
+    {
+        fun timerRepresentation(pMillisecondsElapsed:Long):String
+        {
+            var millisecondsElapsed:Long = pMillisecondsElapsed;
+            val millisecondsInAnHour:Long =  (1000*60*60);
+            val millisecondsInAnMinute:Long =  (1000*60);
+            val millisecondsInAnSecond:Long =  (1000);
 
-        //millisecondsElapsed
-        var millisecondsElapsed:Long = System.currentTimeMillis() - startTime;
+            //Get Hour
+            var HoursElapsed = millisecondsElapsed / millisecondsInAnHour;
+            millisecondsElapsed -= HoursElapsed * millisecondsInAnHour;
 
-        //Get Hour
-        var HoursElapsed = millisecondsElapsed / millisecondsInAnHour;
-        millisecondsElapsed -= HoursElapsed * millisecondsInAnHour;
+            //Get Minute
+            var MinutesElapsed = millisecondsElapsed / millisecondsInAnMinute;
+            millisecondsElapsed -= MinutesElapsed * millisecondsInAnMinute;
 
-        //Get Minute
-        var MinutesElapsed = millisecondsElapsed / millisecondsInAnMinute;
-        millisecondsElapsed -= MinutesElapsed * millisecondsInAnMinute;
+            //Get Second
+            var SecondsElapsed = millisecondsElapsed / millisecondsInAnSecond;
+            millisecondsElapsed -= SecondsElapsed * millisecondsInAnSecond;
 
-        //Get Second
-        var SecondsElapsed = millisecondsElapsed / millisecondsInAnSecond;
-        millisecondsElapsed -= SecondsElapsed * millisecondsInAnSecond;
-
-        //Get String representations
-        var HoursElapsedString = HoursElapsed.toString();
-        var MinutesElapsedString = MinutesElapsed.toString();
-        var SecondsElapsedString = SecondsElapsed.toString();
-        while(HoursElapsedString.length < 2) {HoursElapsedString= "0$HoursElapsedString";}
-        while(MinutesElapsedString.length < 2) {MinutesElapsedString= "0$MinutesElapsedString";}
-        while(SecondsElapsedString.length < 2) {SecondsElapsedString= "0$SecondsElapsedString";}
-
-
-        fragment_record_Timer?.text = "$HoursElapsedString:$MinutesElapsedString:$SecondsElapsedString";
+            //Get String representations
+            var HoursElapsedString = HoursElapsed.toString();
+            var MinutesElapsedString = MinutesElapsed.toString();
+            var SecondsElapsedString = SecondsElapsed.toString();
+            while(HoursElapsedString.length < 2) {HoursElapsedString= "0$HoursElapsedString";}
+            while(MinutesElapsedString.length < 2) {MinutesElapsedString= "0$MinutesElapsedString";}
+            while(SecondsElapsedString.length < 2) {SecondsElapsedString= "0$SecondsElapsedString";}
+            return "$HoursElapsedString:$MinutesElapsedString:$SecondsElapsedString";
+        }
     }
 }
